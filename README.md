@@ -1,1 +1,1 @@
-![Flutter CI](https://github.com/IlIlIlIlIlIlIlIlIlIlIl/llllllll/workflows/Flutter%20CI/badge.svg)
+![Flutter Web CI](https://github.com/IlIlIlIlIlIlIlIlIlIlIl/llllllll/workflows/Flutter%20Web%20CI/badge.svg)
