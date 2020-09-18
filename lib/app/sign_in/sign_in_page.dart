@@ -18,9 +18,7 @@ class SignInPage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("images/landing_bg.jpg"),
-          fit: BoxFit.cover
-        ),
+            image: AssetImage("images/landing_bg.jpg"), fit: BoxFit.cover),
       ),
       child: Scaffold(
         body: Container(
@@ -37,6 +35,14 @@ class SignInPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        Text(
+          "Hey, who are you? 😻",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SizedBox(height: 16.0),
         SocialSignInButton(
           text: "Google",
           logo: "google",
@@ -44,7 +50,7 @@ class SignInPage extends StatelessWidget {
           textColor: Colors.black87,
           onPressed: () {},
         ),
-        SizedBox(height: 12.0),
+        SizedBox(height: 8.0),
         SocialSignInButton(
           text: "Facebook",
           logo: "facebook",
@@ -52,20 +58,21 @@ class SignInPage extends StatelessWidget {
           textColor: Colors.white,
           onPressed: () {},
         ),
-        SizedBox(height: 12.0),
+        SizedBox(height: 8.0),
         SignInButton(
           text: "Email",
           color: Colors.teal[300],
           textColor: Colors.white,
           onPressed: () {},
         ),
-        SizedBox(height: 12.0),
+        SizedBox(height: 8.0),
         SignInButton(
           text: "Anonymous",
           color: Colors.grey[400],
           textColor: Colors.white,
           onPressed: _signInAnonymously,
-        )
+        ),
+        SizedBox(height: 300.0),
       ],
     );
   }
