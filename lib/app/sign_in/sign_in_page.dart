@@ -4,8 +4,6 @@ import 'package:llllllll/app/sign_in/social_sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
-  // SignInPage({@required this.onSignIn});
-  // final Function(User) onSignIn;
 
   Future<void> _signInAnonymously() async {
     try {
@@ -19,6 +17,19 @@ class SignInPage extends StatelessWidget {
     try {
       GoogleAuthProvider googleProvider = GoogleAuthProvider();
       await FirebaseAuth.instance.signInWithPopup(googleProvider);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    try {
+      FacebookAuthProvider facebookProvider = FacebookAuthProvider();
+      facebookProvider.addScope('email');
+      facebookProvider.setCustomParameters({
+        'display': 'popup',
+      });
+      await FirebaseAuth.instance.signInWithPopup(facebookProvider);
     } catch (e) {
       print(e.toString());
     }
@@ -67,14 +78,7 @@ class SignInPage extends StatelessWidget {
           logo: "facebook",
           color: Color(0xFF334D92),
           textColor: Colors.white,
-          onPressed: () {},
-        ),
-        SizedBox(height: 8.0),
-        SignInButton(
-          text: "Email",
-          color: Colors.teal[300],
-          textColor: Colors.white,
-          onPressed: () {},
+          onPressed: _signInWithFacebook,
         ),
         SizedBox(height: 8.0),
         SignInButton(
