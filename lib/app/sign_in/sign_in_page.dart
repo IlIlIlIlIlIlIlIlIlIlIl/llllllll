@@ -4,13 +4,21 @@ import 'package:llllllll/app/sign_in/social_sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
-  SignInPage({@required this.onSignIn});
-  final Function(User) onSignIn;
+  // SignInPage({@required this.onSignIn});
+  // final Function(User) onSignIn;
 
   Future<void> _signInAnonymously() async {
     try {
-      final authResult = await FirebaseAuth.instance.signInAnonymously();
-      onSignIn(authResult.user);
+      await FirebaseAuth.instance.signInAnonymously();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      GoogleAuthProvider googleProvider = GoogleAuthProvider();
+      await FirebaseAuth.instance.signInWithPopup(googleProvider);
     } catch (e) {
       print(e.toString());
     }
@@ -51,7 +59,7 @@ class SignInPage extends StatelessWidget {
           logo: "google",
           color: Colors.white,
           textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: _signInWithGoogle,
         ),
         SizedBox(height: 8.0),
         SocialSignInButton(
