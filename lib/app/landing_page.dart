@@ -16,15 +16,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   void initState() {
-    FirebaseAuth.instance.authStateChanges().listen((User user) {
-      if (user == null) {
-        print('User is currently signed out!');
-        _updateUser(user);
-      } else {
-        print('User is signed in!');
-        _updateUser(user);
-      }
-    });
+    FirebaseAuth.instance.authStateChanges().listen((User user) => _updateUser(user));
     super.initState();
   }
 
@@ -49,7 +41,7 @@ class _LandingPageState extends State<LandingPage> {
       if (_syncDone == true) {
         return SignInPage();
       } else {
-        if (_syncCalled == false){
+        if (_syncCalled == false) {
           _getFutureSync();
           _syncCalled = true;
         }
