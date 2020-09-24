@@ -15,29 +15,28 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(20),
-        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(30),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(46),
+            borderRadius: BorderRadius.circular(45),
             boxShadow: [
               BoxShadow(
                   offset: Offset(0, -2),
                   blurRadius: 30,
-                  color: Colors.black.withOpacity(0.16))
+                  color: Colors.black.withOpacity(0.20))
             ]),
         child: Row(
           children: <Widget>[
             Image.asset(
-              "images/google-logo.png",
-              height: 25,
+              "images/2.0x/logo.png",
+              height: 50,
               alignment: Alignment.topCenter,
             ),
-            SizedBox(width: 15),
             Text(
-              "llllll.dev",
+              ".dev",
               style: GoogleFonts.quicksand(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,14 +45,17 @@ class HomeAppBar extends StatelessWidget {
               title: "Home",
               press: () {},
             ),
+            SizedBox(width: 15),
             MenuElement(
               title: "About",
               press: () {},
             ),
+            SizedBox(width: 15),
             MenuElement(
               title: "Contact",
               press: () {},
             ),
+            SizedBox(width: 15),
             MenuElement(
               title: "Logout",
               press: _signOut,

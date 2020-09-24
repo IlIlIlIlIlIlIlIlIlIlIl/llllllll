@@ -53,6 +53,7 @@ flutter:
   assets:
     - images/facebook-logo.png
     - images/google-logo.png
+    - images/logo.png
     - images/landing_bg.jpg
     - images/main_bg.jpg
 

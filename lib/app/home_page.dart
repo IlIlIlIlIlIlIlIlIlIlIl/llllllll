@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:llllllll/app/home/app_bar.dart';
+import 'package:llllllll/app/home/home_body.dart';
 
 class HomePage extends StatelessWidget {
   
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               HomeAppBar(),
+              HomeBody(),
             ],
           )),
     );

@@ -14,17 +14,17 @@ class MenuElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       child: Padding(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(10),
         child: Text(title,
             style: GoogleFonts.quicksand(
-              fontSize: 25,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
               color: Colors.grey[700].withOpacity(0.7),
             )),
       ),
       color: Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(25)),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       onPressed: press,
     );
