@@ -3,7 +3,6 @@ import 'package:llllllll/app/home/app_bar.dart';
 import 'package:llllllll/app/home/home_body.dart';
 
 class HomePage extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,11 +16,14 @@ class HomePage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
-            children: <Widget>[
-              HomeAppBar(),
-              HomeBody(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                HomeAppBar(),
+                HomeBody(),
+              ],
+            ),
           )),
     );
   }

@@ -15,7 +15,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.all(20),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Colors.white,
@@ -45,17 +45,14 @@ class HomeAppBar extends StatelessWidget {
               title: "Home",
               press: () {},
             ),
-            SizedBox(width: 15),
             MenuElement(
               title: "About",
               press: () {},
             ),
-            SizedBox(width: 15),
             MenuElement(
               title: "Contact",
               press: () {},
             ),
-            SizedBox(width: 15),
             MenuElement(
               title: "Logout",
               press: _signOut,
