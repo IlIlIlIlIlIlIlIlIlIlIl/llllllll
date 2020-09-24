@@ -1,34 +1,26 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:llllllll/app/home/app_bar.dart';
 
 class HomePage extends StatelessWidget {
-  Future<void> _signOut() async {
-    try {
-      await FirebaseAuth.instance.signOut();
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
+  
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-        actions: <Widget>[
-          FlatButton(
-            child: Text(
-              'Logout',
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.white,
-              ),
+      body: Container(
+          height: size.height,
+          width: size.width,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/main_bg.jpg"),
+              fit: BoxFit.cover,
             ),
-            onPressed: _signOut,
-          )
-        ],
-      ),
-      body: Text("Yo"),
+          ),
+          child: Column(
+            children: <Widget>[
+              HomeAppBar(),
+            ],
+          )),
     );
   }
 }
